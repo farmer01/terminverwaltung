@@ -4,11 +4,12 @@
 		<title>Prototyp</title>
 		<script type="text/javascript" src="jquery.js"></script>
 		<script type="text/javascript" src="popup.js"></script>
+		<script type="text/javascript" src="popup_window.js"></script>
 	</head>
 	<body>
 		<div id="container">
 			<div id="header"><h1>Terminverwaltung</h1></div>
-			<div id="nav">
+			<div class="nav">
 				<div id="leftnav">
 					<a href="#">Kalender</a>
 					<a href="">Element 2</a>
@@ -17,6 +18,15 @@
 				<div id="rightnav">
 					<a href="">Logout</a>
 				</div>
+			</div>
+			<div class="nav">
+				<table>
+					<tr>
+						<td style="width:100px;text-align:left;">vorherige</td>
+						<td style="width:600px;text-align:center;">asdf</td>
+						<td style="width:100px;text-align:right;">naechste</td>
+					</tr>
+				</table>
 			</div>
 			<div id="content">
 				<div id="kalcontainer">
@@ -33,8 +43,6 @@
 						<li>17:00</li>
 						<li>18:00</li>
 						<li>19:00</li>
-						<li>20:00</li>
-						<li>21:00</li>
 					</ul>
 					<table id="kalender">
 						<tr>
@@ -48,7 +56,7 @@
 						</tr>
 						<tr>
 							<td>
-								<div onmouseover="popup('asdf<br/>asdfasdf')" onmouseout="kill()" class="termin" style="background-color:blue;height:50px;">adsf</div>
+								<div onmouseover="popup('asdf<br/>asdfasdf')" onmouseout="kill()" class="termin" style="background-color:blue;height:40px;">adsf</div>
 							
 							</td>
 							<td></td>
@@ -61,7 +69,9 @@
 					</table> 
 				</div>
 			</div>
-			<div id="footer"></div>
+			<div id="footer">
+			<a href="termin.html" onClick="return newPopup(this, 'termin')">popup</a>
+			</div>
 		</div>
 	</body>
 </html>
