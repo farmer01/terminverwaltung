@@ -1,6 +1,6 @@
 <html>
 	<head>
-		<link rel="stylesheet" href="login.css" type="text/css">
+		<link rel="stylesheet" href="css/login.css" type="text/css">
 		<title>QV Login</title>
 	</head>
 	<body>

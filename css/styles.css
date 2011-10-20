@@ -1,0 +1,88 @@
+body {
+	background-color:#CFCFFF;
+	margin:0;
+	font-family:sans-serif;
+}
+div#container {
+	background-color:white;
+	width:800px;
+	margin:0 auto;
+	border-left:1px solid grey;
+	border-right:1px solid grey;
+	border-bottom:1px solid grey;
+	-moz-box-shadow: 0 0 5px black;
+	-webkit-box-shadow: 0 0 5px black;
+	-khtml-box-shadow: 0 0 5px black;
+	box-shadow: 0 0 5px black;
+}
+div#header {
+	background-color:#fff;
+	background-image:url('header.jpg');
+	background-repeat:no-repeat;
+	height:85px;
+	padding:15px 10px 0 20px;
+	text-align:right;
+}
+div.nav {
+	height:30px;
+	padding:5px 15px 0;
+}
+div.nav tr {
+	width:800px;
+}
+div#leftnav {
+	float:left;
+}
+div#rightnav {
+	float:right;
+}
+div#content {
+	height:auto;
+	padding:0 12px;
+}
+div#footer {
+	background-color:#eee;
+	height:30px;
+	margin-top:20px;
+}
+table#kalender td {
+	width:100px;
+	height:480px;
+	background:#eee;
+	vertical-align:top;
+}
+table#kalender {
+	float:right;
+}
+ul#zeit {
+	font-size:14px;
+	width:45px;
+	float:left;
+	list-style:none;
+	padding:0;
+	text-align:right;
+	margin-top:27px;
+}
+ul#zeit li {
+	height:40px;
+}
+div#kalcontainer {
+	height:500px;
+	width:100%;
+}
+#pup {
+	position:absolute;
+	z-index:200;
+	padding: 3px;
+	margin-left: 10px;
+	margin-top: 5px;
+	width: 250px;
+	border: 1px solid grey;
+	background-color: white;
+	color: black;
+	font-size: 0.95em;
+}
+body.termin {
+	height: 500px;
+	width: 250px;
+}
