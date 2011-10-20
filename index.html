@@ -1,10 +1,23 @@
 <html>
 	<head>
 		<link rel="stylesheet" href="css/styles.css" type="text/css">
+		<link type="text/css" href="css/ui-lightness/jquery-ui-1.8.16.custom.css" rel="stylesheet" />
 		<title>Prototyp</title>
 		<script type="text/javascript" src="js/jquery.js"></script>
 		<script type="text/javascript" src="js/popup.js"></script>
 		<script type="text/javascript" src="js/popup_window.js"></script>
+		<script type="text/javascript" src="js/jquery-ui-1.8.16.custom.min.js"></script>
+		<script type="text/javascript" src="js/jquery.ui.datepicker-de.js"></script>
+		<script>
+	        $(function() {
+		        $.datepicker.setDefaults( $.datepicker.regional[ "" ] );
+		        $( "#datepicker" ).datepicker( $.datepicker.regional[ "de" ] );
+		        $( "#locale" ).change(function() {
+			        $( "#datepicker" ).datepicker( "option",
+				    $.datepicker.regional[ $( this ).val() ] );
+		        });
+	        });
+	    </script>
 	</head>
 	<body>
 		<div id="container">
@@ -70,7 +83,8 @@
 				</div>
 			</div>
 			<div id="footer">
-			<a href="termin.html" onClick="return newPopup(this, 'termin')">popup</a>
+			    <a href="termin.html" onClick="return newPopup(this, 'termin')">popup</a>
+			    <input id="datepicker" type="text" />
 			</div>
 		</div>
 	</body>
