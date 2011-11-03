@@ -36,67 +36,23 @@
 					<a href="">Logout</a>
 				</div>
 			</div>
-			<div class="nav">
-				<table>
-					<tr>
-						<td style="width:100px;text-align:left;">vorherige</td>
-						<td style="width:600px;text-align:center;">
-						    <form>
-						        <select>
-						            <option>Heinz</option>
-						            <option>Paul</option>
-						        </select>
-						        <input id="datepicker" type="text" />
-						        <input type="submit" value="Los" />
-						    </form>
-						</td>
-						<td style="width:100px;text-align:right;">naechste</td>
-					</tr>
-				</table>
-			</div>
 			<div id="content">
-				<div id="kalcontainer">
-					<ul id="zeit">
-						<li>8:00</li>
-						<li>9:00</li>
-						<li>10:00</li>
-						<li>11:00</li>
-						<li>12:00</li>
-						<li>13:00</li>
-						<li>14:00</li>
-						<li>15:00</li>
-						<li>16:00</li>
-						<li>17:00</li>
-						<li>18:00</li>
-						<li>19:00</li>
-					</ul>
-					<table id="kalender">
-						<tr>
-							<th>Mo, 12.12.</th>
-							<th>Di, 13.12.</th>
-							<th>Mi, 14.12.</th>
-							<th>Do, 15.12.</th>
-							<th>Fr, 16.12.</th>
-							<th>Sa, 17.12.</th>
-							<th>So, 18.12.</th>
-						</tr>
-						<tr>
-							<td>
-								<div onmouseover="popup('asdf<br/>asdfasdf')" onmouseout="kill()" class="termin" style="background-color:blue;height:40px;">adsf</div>
-							
-							</td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-						</tr>
-					</table> 
-				</div>
+				<form>
+				    Mitarbeiter - combobox<br/>
+				    Datum - date picker<br/>
+				    Uhrzeit<br/>
+				    Dauer<br/>
+				    Kunde<br/>
+				        name<br/>
+				        adresse<br/>
+				        interessent<br/>
+				    ergebnis - combobox<br/>
+				    Bemerkungen - text feld<br/>
+				</form>
 			</div>
 			<div id="footer">
 			    <a href="termin.html" onClick="return newPopup(this, 'termin')">popup</a>
+			    <input id="datepicker" type="text" />
 			</div>
 		</div>
 		</center>
