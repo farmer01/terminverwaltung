@@ -6,7 +6,7 @@ body {
 div#container {
 	background-color:white;
 	width:800px;
-	margin:0 auto;
+	margin:0;
 	border-left:1px solid grey;
 	border-right:1px solid grey;
 	border-bottom:1px solid grey;
@@ -85,4 +85,7 @@ div#kalcontainer {
 body.termin {
 	height: 500px;
 	width: 250px;
+}
+#datepicker {
+    width: 80px;
 }
