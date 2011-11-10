@@ -43,13 +43,16 @@ div#content {
 div#footer {
 	background-color:#eee;
 	height:30px;
-	margin-top:20px;
+	margin-top:30px;
 }
 table#kalender td {
 	width:100px;
 	height:480px;
 	background:#eee;
 	vertical-align:top;
+}
+table#kalender th {
+	font-weight:normal;
 }
 table#kalender {
 	float:right;
@@ -61,7 +64,7 @@ ul#zeit {
 	list-style:none;
 	padding:0;
 	text-align:right;
-	margin-top:27px;
+	margin-top:42px;
 }
 ul#zeit li {
 	height:40px;
@@ -69,6 +72,7 @@ ul#zeit li {
 div#kalcontainer {
 	height:500px;
 	width:100%;
+	margin-top:10px;
 }
 #pup {
 	position:absolute;
