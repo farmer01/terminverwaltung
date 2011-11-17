@@ -1,6 +1,6 @@
 body {
 	background-color:#58ACFA;
-	font-family:serif;
+	font-family:sans-serif;
 }
 div#container {
 	background-color:#eee;
@@ -16,6 +16,21 @@ div#container {
 	-khtml-box-shadow: 0 0 5px black;
 	box-shadow: 0 0 5px black;
 }
+p {
+	border: 2px dashed red;
+	background-color: #FF4A4A;
+	font-size: 12px;
+	margin: 4px;
+	padding: 4px;
+	padding-left: 110px;
+	background-image: url('errorSign.png');
+	background-repeat: no-repeat;
+	background-position: left center;
+	text-align: left;
+}
 table {
 	margin:0 auto;
+	text-align:left;
+	margin-bottom: 10px;
+	
 }

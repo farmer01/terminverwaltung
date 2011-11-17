@@ -57,6 +57,11 @@ table#kalender th {
 table#kalender {
 	float:right;
 }
+div.event {
+	color: white;
+	text-align: center;
+	font-size: 14px;
+}
 ul#zeit {
 	font-size:14px;
 	width:45px;

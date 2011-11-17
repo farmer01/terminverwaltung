@@ -1,5 +1,15 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<?php
+	if(isset($_POST['date'])) 
+	{
+		$date = strtotime($_POST['date']);
+	} else {
+		$date = strtotime("now");
+	}
+?>
 <html>
 	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 		<link rel="stylesheet" href="css/styles.css" type="text/css">
 		<link type="text/css" href="css/ui-lightness/jquery-ui-1.8.16.custom.css" rel="stylesheet" />
 		<title>Prototyp</title>
@@ -38,18 +48,18 @@
 			<div class="nav">
 				<table>
 					<tr>
-						<td style="width:100px;text-align:left;">vorherige</td>
+						<td style="width:100px;text-align:left;"><form action="index.php" method="POST"><input name="date" type="text" hidden="yes" value=<?php echo '"'.date('d.m.Y',date($date-604800)).'"'; ?> /><input type="submit" value="vorherige" /></form></td>
 						<td style="width:600px;text-align:center;">
-						    <form action="index.php" method="POST">
-						        <select name="user">
-						            <option>Heinz</option>
-						            <option>Paul</option>
-						        </select>
-						        <input id="datepicker" type="text" name="date" />
-						        <input type="submit" value="Los" />
-						    </form>
+							<form action="index.php" method="POST">
+								<select name="user">
+									<option>Heinz</option>
+									<option>Paul</option>
+								</select>
+								<input id="datepicker" type="text" name="date" />
+								<input type="submit" value="Los" />
+							</form>
 						</td>
-						<td style="width:100px;text-align:right;">naechste</td>
+						<td style="width:100px;text-align:right;"><form action="index.php" method="POST"><input name="date" type="text" hidden="yes" value=<?php echo '"'.date('d.m.Y',date($date+604800)).'"'; ?> /><input type="submit" value="nächste" /></form></td>
 					</tr>
 				</table>
 			</div>
@@ -71,8 +81,10 @@
 					</ul>
 					<table id="kalender">
 						<tr>
-						    <?php 
-						        $date = strtotime("now");
+						    <?php
+								/* Jedes Datum der Woche mit
+								 * dem aktuellen Datum errechnen
+								 */
 						        $wd = date('w', $date);
 						        $darr[$wd] = $date;
 						        $tmpdate = $date;
@@ -103,7 +115,7 @@
 						</tr>
 						<tr>
 							<td>
-								<div onmouseover="popup('08:00 - 09:00<br/>Max Mustermann<br/>Musterstrasse 13<br/>8020 Graz')" onmouseout="kill()" class="termin" style="color:white;background-color:#133783;height:40px;font-size:14px">08:00 - 09:00</div>
+								<div class="event" onmouseover="popup('08:00 - 09:00<br/>Max Mustermann<br/>Musterstrasse 13<br/>8020 Graz')" onmouseout="kill()" class="termin" style="background-color:#133783;height:40px;">08:00 - 09:00</div>
 							</td>
 							<td></td>
 							<td></td>
