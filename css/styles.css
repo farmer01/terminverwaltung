@@ -1,99 +1,130 @@
 body {
-	background-color:#58ACFA;
-	margin:0;
-	font-family:sans-serif;
+    background-color: #133783;
+    margin:0;
+    font-family:sans-serif;
+
+}
+a {
+    text-decoration:none;
+}
+div#topnav img {
+    margin: 0 3px -2px 4px;
+}
+div#topnav a, a:visited {
+    color:#eee;
+}
+div#topnav a:hover, a#current{
+    color:white;
 }
 div#container {
-	background-color:white;
-	width:800px;
-	margin:0;
-	border-left:1px solid grey;
-	border-right:1px solid grey;
-	border-bottom:1px solid grey;
-	-moz-box-shadow: 0 0 5px black;
-	-webkit-box-shadow: 0 0 5px black;
-	-khtml-box-shadow: 0 0 5px black;
-	box-shadow: 0 0 5px black;
+    background-color:white;
+    width:800px;
+    margin:0;
+    border-left:1px solid grey;
+    border-right:1px solid grey;
+    border-bottom:1px solid grey;
+    -moz-box-shadow: 0 0 8px black;
+    -webkit-box-shadow: 0 0 8px black;
+    -khtml-box-shadow: 0 0 8px black;
+    box-shadow: 0 0 8px black;
+
+    -moz-border-radius-bottomleft: 12px;
+    -khtml-border-bottom-left-radius: 12px;
+    -webkit-border-bottom-left-radius: 12px;
+    border-bottom-left-radius: 12px;
+    -moz-border-radius-bottomright: 12px;
+    -khtml-border-bottom-right-radius: 12px;
+    -webkit-border-bottom-right-radius: 12px;
+    border-bottom-right-radius: 12px;
 }
 div#header {
-	background-color:#fff;
-	background-image:url('header.jpg');
-	background-repeat:no-repeat;
-	height:85px;
-	padding:15px 10px 0 20px;
-	text-align:right;
+    background-color:#fff;
+    background-image:url('header.jpg');
+    background-repeat:no-repeat;
+    height:90px;
+    padding:10px 10px 0 20px;
+    text-align:right;
 }
-div.nav {
-	height:30px;
-	padding:5px 15px 0;
+div#nav {
+    height:30px;
+    padding:5px 15px 0;
+}
+div#topnav {
+    height:26px;
+    margin:0 12px;
+    padding-top:6px;
+    -moz-border-radius: 5px;
+    -khtml-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    background-image:url('navbg.png');
+    font-weight: bold;
 }
 div.nav tr {
-	width:800px;
-}
-div#leftnav {
-	float:left;
-}
-div#rightnav {
-	float:right;
+    width:800px;
 }
 div#content {
-	height:auto;
-	padding:0 12px;
+    height:auto;
+    padding:0 12px;
 }
 div#footer {
-	background-color:#eee;
-	height:30px;
-	margin-top:30px;
+    background-color:#eee;
+    height:30px;
+    margin-top:30px;
+    -moz-border-radius-bottomleft: 10px;
+    -khtml-border-bottom-left-radius: 10px;
+    -webkit-border-bottom-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    -moz-border-radius-bottomright: 10px;
+    -khtml-border-bottom-right-radius: 10px;
+    -webkit-border-bottom-right-radius: 10px;
+    border-bottom-right-radius: 10px;
 }
 table#kalender td {
-	width:100px;
-	height:480px;
-	background:#eee;
-	vertical-align:top;
+    width:100px;
+    height:480px;
+    background:#eee;
+    vertical-align:top;
 }
-table#kalender th {
-	font-weight:normal;
+table#kalender th, ul#zeit {
+    font-size:12px;
+    font-weight: bold;
 }
 table#kalender {
-	float:right;
+    float:right;
 }
 div.event {
-	color: white;
-	text-align: center;
-	font-size: 14px;
+    color: white;
+    text-align: center;
+    font-size: 14px;
 }
 ul#zeit {
-	font-size:14px;
-	width:45px;
-	float:left;
-	list-style:none;
-	padding:0;
-	text-align:right;
-	margin-top:42px;
+    width:45px;
+    float:left;
+    list-style:none;
+    padding:0;
+    text-align:right;
+    margin-top:34px;
 }
 ul#zeit li {
-	height:40px;
+    height:40px;
 }
 div#kalcontainer {
-	height:500px;
-	width:100%;
-	margin-top:10px;
+    height:520px;
+    width:100%;
+    margin-top:10px;
 }
 #pup {
-	position:absolute;
-	z-index:200;
-	padding: 3px;
-	margin-left: 10px;
-	margin-top: 5px;
-	width: 250px;
-	border: 1px solid grey;
-	background-color: white;
-	color: black;
-	font-size: 0.95em;
-}
-body.termin {
-	height: 500px;
-	width: 250px;
+    position:absolute;
+    z-index:200;
+    padding: 3px;
+    margin-left: 10px;
+    margin-top: 5px;
+    width: 250px;
+    border: 1px solid grey;
+    background-color: white;
+    color: black;
+    font-size: 0.95em;
 }
 #datepicker {
     width: 80px;
