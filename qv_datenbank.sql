@@ -1,16 +1,17 @@
 CREATE TABLE IF NOT EXISTS termin(
-	terminID int(16) NOT NULL,
-	mitarbeiterID int(16) NOT NULL,
-	kundenID Int(16) NOT NULL,
+	terminID int(16) NOT NULL AUTO_INCREMENT,
+	mitarbeiterID Varchar(50) NOT NULL,
+	kundenID Int(16),
+        terminart Char(1) NOT NULL,
 	termindatum Timestamp NOT NULL,
-	termindauer	Int(5) NOT NULL,
+	termindauer Int(5) NOT NULL,
 	quelle Int(16),
 	abschlussart Int(16),
 	bemerkung VARCHAR(1000),
 	PRIMARY KEY(terminID)); 
 	
 CREATE TABLE IF NOT EXISTS kunde(
-	kundenID Int(16) PRIMARY KEY,
+	kundenID Int(16) PRIMARY KEY AUTO_INCREMENT,
 	anrede VARCHAR(10) NOT NULL,
 	titel VARCHAR(20),
 	vorname VARCHAR(50) NOT NULL,
@@ -24,10 +25,10 @@ CREATE TABLE IF NOT EXISTS kunde(
 	bemerkung VARCHAR(1000));
 	
 CREATE TABLE IF NOT EXISTS kaufvertrag(
-	vertragID Int(16) PRIMARY KEY,
+	vertragID Int(16) PRIMARY KEY AUTO_INCREMENT,
 	zahlungsart Int(16) NOT NULL);
 
-CREATE TABLE IF NOT EXISTS systembenutzer(
+CREATE TABLE IF NOT EXISTS user(
 	username Varchar(50) PRIMARY KEY,
 	vorname VARCHAR(50) NOT NULL,
 	nachname VARCHAR(50) NOT NULL,

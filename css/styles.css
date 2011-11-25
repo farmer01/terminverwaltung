@@ -12,9 +12,11 @@ div#topnav img {
 }
 div#topnav a, a:visited {
     color:#eee;
+    text-shadow:black 0 0 2px;
 }
-div#topnav a:hover, a#current{
+div#topnav a:hover, div#topnav a#current {
     color:white;
+    text-shadow:black 0 0 4px;
 }
 div#container {
     background-color:white;
@@ -42,7 +44,7 @@ div#header {
     background-image:url('header.jpg');
     background-repeat:no-repeat;
     height:90px;
-    padding:10px 10px 0 20px;
+    padding:10px 14px 0 20px;
     text-align:right;
 }
 div#nav {

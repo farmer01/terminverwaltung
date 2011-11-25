@@ -1,5 +1,5 @@
 body {
-	background-color:#58ACFA;
+	background-color: #133783;
 	font-family:sans-serif;
 }
 div#container {
@@ -15,6 +15,10 @@ div#container {
 	-webkit-box-shadow: 0 0 5px black;
 	-khtml-box-shadow: 0 0 5px black;
 	box-shadow: 0 0 5px black;
+        -moz-border-radius: 10px;
+        -khtml-border-radius: 10px;
+        -webkit-border-radius: 10px;
+        border-radius: 10px;
 }
 p {
 	border: 2px dashed red;
