@@ -7,6 +7,21 @@ body {
 a {
     text-decoration:none;
 }
+h3 {
+    color: #039;
+    margin-left: 10px;
+}
+div#topnav {
+    height: 25px;
+    margin: 0 12px;
+    -moz-border-radius: 5px;
+    -khtml-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    background-image: url('navbg.png');
+    font-weight: bold;
+    padding-top: 7px;
+}
 div#topnav img {
     margin: 0 3px -2px 4px;
 }
@@ -17,6 +32,18 @@ div#topnav a, a:visited {
 div#topnav a:hover, div#topnav a#current {
     color:white;
     text-shadow:black 0 0 4px;
+}
+div#leftnav {
+    text-align:left;
+    float:left;
+    margin-left:5px;
+}
+div#rightnav {
+    text-align:right;
+    float:right;
+    margin-right:10px;
+    font-size:15px;
+    color:white;
 }
 div#container {
     background-color:white;
@@ -51,23 +78,13 @@ div#nav {
     height:30px;
     padding:5px 15px 0;
 }
-div#topnav {
-    height:26px;
-    margin:0 12px;
-    padding-top:6px;
-    -moz-border-radius: 5px;
-    -khtml-border-radius: 5px;
-    -webkit-border-radius: 5px;
-    border-radius: 5px;
-    background-image:url('navbg.png');
-    font-weight: bold;
-}
 div.nav tr {
     width:800px;
 }
 div#content {
     height:auto;
     padding:0 12px;
+    text-align:left;
 }
 div#footer {
     background-color:#eee;
@@ -95,6 +112,26 @@ table#kalender th, ul#zeit {
 table#kalender {
     float:right;
 }
+table#infotable {
+    border-collapse:collapse;
+    display: table-cell;
+}
+table#infotable th {
+    font-size: 14px;
+    font-weight: normal;
+    color: #039;
+    border-bottom: 2px solid #6678B1;
+    padding: 10px 8px;
+}
+table#infotable td {
+    font-size:12px;
+    border-bottom: 1px solid #CCC;
+    color: #669;
+    padding: 6px 8px;
+}
+table#infotable tbody tr:hover td {
+    color: #339;
+}
 div.event {
     color: white;
     text-align: center;
@@ -112,7 +149,7 @@ ul#zeit li {
     height:40px;
 }
 div#kalcontainer {
-    height:520px;
+    height:510px;
     width:100%;
     margin-top:10px;
 }
