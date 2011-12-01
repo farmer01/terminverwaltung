@@ -123,14 +123,14 @@ else
                             </tr>
                             <tr>
                                 <td>
-                                    <div class="event" onmouseover="popup('08:00 - 09:00&lt;br&gt;Max Mustermann&lt;br&gt;Musterstrasse 13&lt;br&gt;8020 Graz')" onmouseout="kill()" style="background-color:#133783;height:40px;">08:00 - 09:00</div>
+                                    <div class="event" onmouseover="popup('Max Mustermann&lt;br&gt;Musterstrasse 13&lt;br&gt;8020 Graz')" onmouseout="kill()" style="margin-top:80px;background-color:#133783;height:40px;">10:00 - 11:00</div>
                                 </td>
                                 <td></td>
                                 <td></td>
                                 <td></td>
                                 <td></td>
                                 <td></td>
-                                <td></td>
+                                <td><div class="event" style="background-color:darkred;height:480px;">08:00 - 20:00</div></td>
                             </tr>
                         </table> 
                     </div>
