@@ -1,5 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <?php
+date_default_timezone_set('Europe/Vienna');
 if (isset($_POST['date']))
     $date = strtotime($_POST['date']);
 else
