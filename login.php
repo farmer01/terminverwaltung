@@ -21,15 +21,15 @@
                 </p>
             <?php } ?>
             <h3>Terminverwaltung - Login</h3>
-            <form method="POST" action="index.php">
+            <form method="POST" action="checklogin.php">
                 <table>
                     <tr>
                         <td>Username:</td>
-                        <td><input type="text" name="user" value="user"/></td>
+                        <td><input type="text" name="user" value=""/></td>
                     </tr>
                     <tr>
                         <td>Passwort:</td>
-                        <td><input type="password" name="password" value="asdfafa" /></td>
+                        <td><input type="password" name="password" value="" /></td>
                     </tr>
                     <tr>
                         <td></td>

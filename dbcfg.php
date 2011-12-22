@@ -4,10 +4,7 @@
 	$dbname = "qv";
 	$dbuser = "root";
 	$dbpass = "";
-
-	define ( 'MYSQL_HOST', $dbhost);
-	define ( 'MYSQL_BENUTZER', $dbuser);
-	define ( 'MYSQL_KENNWORT', $dbpass);
-	define ( 'MYSQL_DATENBANK', $dbname);
-
+        
+        $conn = mysql_connect($dbhost, $dbuser, $dbpass) or die('Error connecting to mysql');
+        mysql_select_db($dbname);
 ?>

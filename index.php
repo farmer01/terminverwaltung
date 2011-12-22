@@ -1,5 +1,17 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <?php
+require_once("dbcfg.php");
+
+$page = $_GET['page'];
+
+$pageOK = false;
+if ($page == "kalender" || $page == "suche" || $page == "stats" || $page == "neu" || $page == "mitarbeiter")
+    $pageOK = true;
+if (!isset($page))
+    $page = "blog";
+else if (!$pageOK)
+    $page = "404";
+
 date_default_timezone_set('Europe/Vienna');
 if (isset($_POST['date']))
     $date = strtotime($_POST['date']);
@@ -11,7 +23,7 @@ else
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <link rel="stylesheet" href="css/styles.css" type="text/css" />
         <link type="text/css" href="css/ui-lightness/jquery-ui-1.8.16.custom.css" rel="stylesheet" />
-        <title>quellvital - Termine</title>
+        <title>quellvital</title>
         <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
     </head>
     <body>
