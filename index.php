@@ -39,11 +39,11 @@ if (!isset($_SESSION['user'])) {
                     <div id="header"><h2>Terminverwaltung</h2></div>
                     <div id="topnav">
                         <div id="leftnav">
-                            <a href="#" id="current"><img src="css/calendar.png" />Kalender</a>
-                            <a href="liste.html"><img src="css/list.png" />Suche</a>
+                            <a href="index.php" <?php if($page=="kalender") echo 'id="current"'; ?>><img src="css/calendar.png" />Kalender</a>
+                            <a href="index.php?page=suche" <?php if($page=="suche") echo 'id="current"'; ?>><img src="css/list.png" />Suche</a>
                             <a href="#"><img src="css/chart_bar.png" />Statistiken</a>
                             <a href="#"><img src="css/date_add.png" />Termin erstellen</a>
-                            <a href="index.php?page=mitarbeiter"><img src="css/group.png" />Mitarbeiter</a>
+                            <a href="index.php?page=mitarbeiter" <?php if($page=="mitarbeiter") echo 'id="current"'; ?>><img src="css/group.png" />Mitarbeiter</a>
                         </div>
                         <div id="rightnav">
                             <a href="checklogin.php">Logout</a>
