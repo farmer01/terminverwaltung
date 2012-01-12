@@ -11,19 +11,34 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>bernhardb</td>
-                <td>Bernhard</td>
-                <td>Bauer</td>
-                <td>Mitarbeiter</td>
-                <td></td>
-            </tr>
-            <tr>
-                <td>oliverm</td>
-                <td>Oliver</td>
-                <td>Milhalm</td>
-                <td>Mitarbeiter</td>
-            </tr>
+            <?php
+            $access_arr = array('Administrator', 'TelefonistIn', "MitarbeiterIn");
+            
+            $result = mysql_query("SELECT username, vorname, nachname, access_level FROM user ORDER BY username");
+            if (!$result) {
+                die("Query to show fields from table failed");
+            }
+
+            $fields_num = mysql_num_fields($result);
+            
+            while ($row = mysql_fetch_row($result)) {
+                echo "<tr>";
+                $isSaved = false;
+                foreach ($row as $cell) {
+                    if(!$isSaved) {
+                        $isSaved = true;
+                        $usrname = $cell;
+                    }
+                    if(is_numeric($cell))
+                        echo"<td>".$access_arr[$cell]."</td>";
+                    else
+                        echo "<td>$cell</td>";
+                }
+                echo "<td>"./* INSERT MUTHAFUCKIN ICONS HEERE */"</td>";
+                echo "</tr>\n";
+            }
+            mysql_free_result($result);
+            ?>
         </tbody>
     </table>
 </div>
