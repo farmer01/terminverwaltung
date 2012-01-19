@@ -1,9 +1,10 @@
 <div id="content">
     <h3>Suche</h3>
-    <form action="#" method="get">
-        <input type="text" name="key" value="Mustermann" />
+    <form name="suche" action="#" method="get">
+        <input type="text" name="key" />
         <input type="submit" value="Suchen" />
     </form>
+    <script language="JavaScript">document.suche.key.focus();</script>
     <table id="infotable">
         <thead>
             <tr>

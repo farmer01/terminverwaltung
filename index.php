@@ -10,9 +10,10 @@ if (!isset($_SESSION['user'])) {
     require_once("dbcfg.php");
 
     $page = $_GET['page'];
+    $pages = array("kalender", "suche", "stats", "neu", "mitarbeiter", "mneu", "mdel");
 
     $pageOK = false;
-    if ($page == "kalender" || $page == "suche" || $page == "stats" || $page == "neu" || $page == "mitarbeiter")
+    if (in_array($page, $pages))
         $pageOK = true;
     if (!isset($page))
         $page = "kalender";

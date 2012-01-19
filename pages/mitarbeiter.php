@@ -34,11 +34,12 @@
                     else
                         echo "<td>$cell</td>";
                 }
-                echo "<td>"./* INSERT MUTHAFUCKIN ICONS HEERE */"</td>";
+                echo "<td><a href=#><img src='css/pencil.png'/></a> <a href='index.php?page=mdel&user=".$username."'><img src='css/delete.png'/></a></td>";
                 echo "</tr>\n";
             }
             mysql_free_result($result);
             ?>
         </tbody>
     </table>
+    <a href="index.php?page=mneu" style="color:green;font-size:15px;margin-left:5px"><img style="margin-top: 20px;margin-bottom:-2px;" src="css/add.png"/> Neuer Benutzer</a>
 </div>
