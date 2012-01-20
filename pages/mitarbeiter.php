@@ -18,8 +18,6 @@
             if (!$result) {
                 die("Query to show fields from table failed");
             }
-
-            $fields_num = mysql_num_fields($result);
             
             while ($row = mysql_fetch_row($result)) {
                 echo "<tr>";
@@ -34,10 +32,10 @@
                     else
                         echo "<td>$cell</td>";
                 }
-                echo "<td><a href=#><img src='css/pencil.png'/></a> <a href='index.php?page=mdel&user=".$username."'><img src='css/delete.png'/></a></td>";
-                echo "</tr>\n";
+                echo "<td><a href='index.php?page=medit&user=".$usrname."'><img src='css/pencil.png'/></a> ";
+                echo "<a href='index.php?page=mdel&user=".$usrname."'><img src='css/delete.png'/></a></td>";
+                echo "</tr>";
             }
-            mysql_free_result($result);
             ?>
         </tbody>
     </table>

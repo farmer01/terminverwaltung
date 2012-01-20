@@ -1,6 +1,6 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <?php
 session_start();
+echo '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">';
 if (!isset($_SESSION['user'])) {
     header("refresh:0;url=login.php");
 } else {
@@ -10,7 +10,7 @@ if (!isset($_SESSION['user'])) {
     require_once("dbcfg.php");
 
     $page = $_GET['page'];
-    $pages = array("kalender", "suche", "stats", "neu", "mitarbeiter", "mneu", "mdel");
+    $pages = array("kalender", "suche", "stats", "neu", "mitarbeiter", "mneu", "mdel", "medit");
 
     $pageOK = false;
     if (in_array($page, $pages))

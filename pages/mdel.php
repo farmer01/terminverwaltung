@@ -1,6 +1,8 @@
 <?php
-    $query = "DELETE FROM `qv`.`user` WHERE `user`.`username` = '".$_GET['user']."'";
+    $user = $_GET['user'];
+    $query = "DELETE FROM `qv`.`user` WHERE `user`.`username` = '".$user."'";
     mysql_query($query);
-
-    header("refresh:0;url=index.php?page=mitarbeiter");
+    
+    echo "<p style='color:red;'>Der Mitarbeiter <b>".$user."</b> wurde erfolgreich gelöscht.</p>";
+    include("mitarbeiter.php");
 ?>
