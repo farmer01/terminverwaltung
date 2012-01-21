@@ -15,8 +15,7 @@ if (isset($_POST['vorname'])) {
 
     mysql_query($query);
     
-    echo "<p style='color:green;'>Der Mitarbeiter <b>" . $username . "</b> wurde erfolgreich bearbeitet.</p>";
-    include("mitarbeiter.php");
+    echo '<META HTTP-EQUIV="Refresh" Content="0; URL=index.php?page=mitarbeiter">'; 
 } else {
     $username = $_GET['user'];
     $result = mysql_query("SELECT vorname, nachname, access_level FROM user WHERE `username` LIKE '" . $username . "'");

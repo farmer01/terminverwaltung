@@ -3,6 +3,5 @@
     $query = "DELETE FROM `qv`.`user` WHERE `user`.`username` = '".$user."'";
     mysql_query($query);
     
-    echo "<p style='color:red;'>Der Mitarbeiter <b>".$user."</b> wurde erfolgreich gelöscht.</p>";
-    include("mitarbeiter.php");
+    echo '<META HTTP-EQUIV="Refresh" Content="0; URL=index.php?page=mitarbeiter">'; 
 ?>

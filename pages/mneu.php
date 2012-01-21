@@ -10,8 +10,7 @@ if (isset($_POST['username'])) {
     $query = "INSERT INTO  `qv`.`user` (`username` ,`vorname` ,`nachname` ,`password` ,`access_level`)VALUES ('" . $username . "',  '" . $vorname . "',  '" . $nachname . "',  '" . $passwort . "',  '" . $berechtigung . "')";
     mysql_query($query);
     
-    echo "<p style='color:green;'>Der Mitarbeiter <b>".$username."</b> wurde erfolgreich hinzugefügt.</p>";
-    include("mitarbeiter.php");
+    echo '<META HTTP-EQUIV="Refresh" Content="0; URL=index.php?page=mitarbeiter">'; 
 } else {
     ?>
     <div id="content">
