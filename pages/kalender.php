@@ -10,7 +10,7 @@
             <td style="width:600px;text-align:center;">
                 <form action="index.php" method="POST">
                     <select name="user">
-                        <option>oliverm</option>
+                        <option>martind</option>
                         <option>bernhardb</option>
                     </select>
                     <input id="datepicker" type="text" name="date" value="<?php echo date('d.m.Y', strtotime("now")); ?>" />
@@ -63,7 +63,7 @@
                 /* Jedes Datum der Woche mit
                  * dem aktuellen Datum errechnen
                  */
-                $wd = date('w', $date);
+                $wd = date('w', $date); //Holt numeric value des Wochentags (0-6)
                 $darr[$wd] = $date;
                 $tmpdate = $date;
                 for ($i = $wd; $i > 1; $i--) {
@@ -86,6 +86,32 @@
                 echo "<th>Freitag<br/>" . date('d.m.Y', $darr[5]) . "</th>";
                 echo "<th>Samstag<br/>" . date('d.m.Y', $darr[6]) . "</th>";
                 echo "<th>Sonntag<br/>" . date('d.m.Y', $darr[7]) . "</th>";
+
+                $mitarbeiterid = "zola";
+                $query = "SELECT terminid, kundenid, termindauer FROM termin WHERE mitarbeiterid = '" . $mitarbeiterid . "' AND termindatum BETWEEN '" . $darr[1] . "' AND '" . ($darr[7] + 86400) . "' ORDER BY termindatum";
+
+                $result = mysql_query($query);
+                if (!$result) {
+                    die("Query to show fields from table failed");
+                }
+
+                while ($row = mysql_fetch_row($result)) {
+                    echo "<tr>";
+                    $isSaved = false;
+                    $i = 0;
+                    $tmp = null;
+                    foreach ($row as $cell) {
+                        if (!$isSaved) {
+                            $isSaved = true;
+                            $usrname = $cell;
+                        }
+                        if ($i++ == 3)
+                            echo "<td>" . date('d.m.Y, H:i', strtotime($cell)) . "</td>";
+                        else
+                            echo "<td>$cell</td>";
+                    }
+                    echo "</tr>";
+                }
                 ?>
 
             </tr>

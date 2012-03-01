@@ -1,38 +1,53 @@
 <div id="content">
     <h3>Suche</h3>
-    <form name="suche" action="#" method="get">
-        <input type="text" name="key" />
+    <form name="suche" action="index.php" method="get">
+        <input type="hidden" name="page" value="suche" />
+        <input type="text" name="key" />    
         <input type="submit" value="Suchen" />
     </form>
     <script language="JavaScript">document.suche.key.focus();</script>
+    <?php if (isset($_GET['key'])) { ?>
     <table id="infotable">
         <thead>
             <tr>
                 <th width="50">ID</th>
                 <th width="140">Mitarbeiter</th>
                 <th width="140">Kunde</th>
-                <th width="90">Datum</th>
-                <th width="60">Uhrzeit</th>
+                <th width="140">Datum</th>
                 <th width="80">Dauer (Min)</th>
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>32</td>
-                <td>Bernhard Bauer</td>
-                <td>Max Mustermann</td>
-                <td>31.8.2011</td>
-                <td>09:30</td>
-                <td>30</td>
-            </tr>
-            <tr>
-                <td>64</td>
-                <td>Oliver Milhalm</td>
-                <td>Maria Mustermann</td>
-                <td>12.11.2011</td>
-                <td>18:00</td>
-                <td>60</td>
-            </tr>
+            <?php
+            //Termin 'f' = frei
+            //Termin 'a' = normaler Auftrag
+            
+            $query = "SELECT terminid, mitarbeiterid, kundenid, termindatum, termindauer FROM termin WHERE kundenid = '".$_GET['key']."' ORDER BY terminid";
+            
+            $result = mysql_query($query);
+            if (!$result) {
+                die("Query to show fields from table failed");
+            }
+            
+            while ($row = mysql_fetch_row($result)) {
+                echo "<tr>";
+                $isSaved = false;
+                $i = 0;
+                $tmp = null;
+                foreach ($row as $cell) {
+                    if(!$isSaved) {
+                        $isSaved = true;
+                        $usrname = $cell;
+                    }
+                    if($i++ == 3)
+                        echo "<td>".date('d.m.Y, H:i', strtotime($cell))."</td>";
+                    else
+                        echo "<td>$cell</td>";
+                }
+                echo "</tr>";
+            }
+            ?>
         </tbody>
     </table> 
+    <?php } ?>
 </div>

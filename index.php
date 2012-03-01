@@ -7,15 +7,17 @@ if (!isset($_SESSION['user']) || $_SESSION['user'] == "") {
     $al = $_SESSION['al'];
 
     require_once("dbcfg.php");
-
-    $page = $_GET['page'];
-    $pages = array("kalender", "suche", "stats", "neu", "mitarbeiter", "mneu", "mdel", "medit");
-
+	$pages = array("kalender", "suche", "stats", "neu", "mitarbeiter", "mneu", "mdel", "medit");
+    if(isset($_GET['page'])) {
+		$page = $_GET['page'];
+	} else {
+        $page = "kalender";
+	}
+	
     $pageOK = false;
     if (in_array($page, $pages))
         $pageOK = true;
-    if (!isset($page))
-        $page = "kalender";
+    
     else if (!$pageOK)
         $page = "404";
 
