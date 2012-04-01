@@ -6,7 +6,7 @@
         <input type="submit" value="Suchen" />
     </form>
     <script language="JavaScript">document.suche.key.focus();</script>
-    <?php if (isset($_GET['key'])) { ?>
+    <?php if (isset($_GET['key']) && $_GET['key'] != "") { ?>
     <table id="infotable">
         <thead>
             <tr>
@@ -21,33 +21,22 @@
             <?php
             //Termin 'f' = frei
             //Termin 'a' = normaler Auftrag
+            $user = $_SESSION['user'];
+            $key = mysql_real_escape_string(stripslashes($_GET['key']));
+            $user = mysql_real_escape_string(stripslashes($_SESSION['user']));
             
-            $query = "SELECT terminid, mitarbeiterid, kundenid, termindatum, termindauer FROM termin WHERE kundenid = '".$_GET['key']."' ORDER BY terminid";
-            
-            $result = mysql_query($query);
+            $result = mysql_query("SELECT username FROM user ORDER BY username");
             if (!$result) {
                 die("Query to show fields from table failed");
             }
             
             while ($row = mysql_fetch_row($result)) {
-                echo "<tr>";
-                $isSaved = false;
-                $i = 0;
-                $tmp = null;
-                foreach ($row as $cell) {
-                    if(!$isSaved) {
-                        $isSaved = true;
-                        $usrname = $cell;
-                    }
-                    if($i++ == 3)
-                        echo "<td>".date('d.m.Y, H:i', strtotime($cell))."</td>";
-                    else
-                        echo "<td>$cell</td>";
-                }
-                echo "</tr>";
+                echo "<option";
+                
+                echo "</option>";
             }
             ?>
         </tbody>
     </table> 
-    <?php } ?>
+    <?php }  ?>
 </div>

@@ -21,6 +21,8 @@ if (isset($_SESSION['user'])) {
     if ($access_level != "") {
         $_SESSION['user'] = $user;
         $_SESSION['al'] = $access_level;
+        //SPÄTER AUSBESSERN
+        $_SESSION['subuser'] = "zola";
         header("refresh:0;url=index.php");
     } else {
         ?>

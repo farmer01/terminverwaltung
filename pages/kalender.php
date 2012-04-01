@@ -9,10 +9,6 @@
             </td>
             <td style="width:600px;text-align:center;">
                 <form action="index.php" method="POST">
-                    <select name="user">
-                        <option>martind</option>
-                        <option>bernhardb</option>
-                    </select>
                     <input id="datepicker" type="text" name="date" value="<?php echo date('d.m.Y', strtotime("now")); ?>" />
                     <input type="submit" value="Los" />
                 </form>

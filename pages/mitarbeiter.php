@@ -32,12 +32,12 @@
                     else
                         echo "<td>$cell</td>";
                 }
-                echo "<td><a href='index.php?page=medit&user=".$usrname."'><img src='css/pencil.png'/></a> ";
-                echo "<a href='index.php?page=mdel&user=".$usrname."'><img src='css/delete.png'/></a></td>";
+                echo "<td><a href='index.php?page=medit&user=".$usrname."'><img title='bearbeiten' src='css/pencil.png'/></a> ";
+                echo "<a href='index.php?page=mdel&user=".$usrname."'><img title='löschen' src='css/delete.png'/></a></td>";
                 echo "</tr>";
             }
             ?>
         </tbody>
     </table>
-    <a href="index.php?page=mneu" style="color:green;font-size:15px;margin-left:5px"><img style="margin-top: 20px;margin-bottom:-2px;" src="css/add.png"/> Neuer Benutzer</a>
+    <a href="index.php?page=mneu" class="greenbutton"><img style="margin-top: 20px;margin-bottom:-2px;" src="css/add.png" /> Neuer Mitarbeiter</a>
 </div>

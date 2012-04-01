@@ -11,6 +11,9 @@ h3 {
     color: #039;
     margin-left: 10px;
 }
+.hl {
+    text-shadow:blue 0 0 1px;
+}
 div#topnav {
     height: 25px;
     margin: 0 12px;
@@ -87,6 +90,8 @@ div#content {
     text-align:left;
 }
 div#footer {
+    text-align: right;
+    padding-right:20px;
     background-color:#eee;
     height:30px;
     margin-top:30px;
@@ -167,4 +172,17 @@ div#kalcontainer {
 }
 #datepicker {
     width: 80px;
+}
+
+a.greenbutton {
+    border: 1px solid green; 
+    color:green;
+    background-color: #cefdd0;
+    font-size:15px;
+    margin-left:5px;
+    -moz-border-radius: 6px;
+    -khtml-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    border-radius: 6px;
+    padding:4px;
 }
