@@ -112,15 +112,31 @@
 
             </tr>
             <tr>
-                <td>
-                    <div class="event" onmouseover="popup('Max Mustermann&lt;br&gt;Musterstrasse 13&lt;br&gt;8020 Graz')" onmouseout="kill()" style="margin-top:80px;background-color:#133783;height:40px;">10:00 - 11:00</div>
-                </td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td><div class="event" style="background-color:darkred;height:480px;">08:00 - 20:00</div></td>
+                <?php
+                //<div class="event" onmouseover="popup(\'Max Mustermann&lt;br&gt;Musterstrasse 13&lt;br&gt;8020 Graz\')" onmouseout="kill()" style="margin-top:80px;background-color:#133783;height:40px;">10:00 - 11:00</div>
+                $query = "SELECT * FROM termin";
+                echo '<td>';
+                    //Montag
+                echo '</td>';
+                echo '<td>';
+                    //Dienstag
+                echo '</td>';
+                echo '<td>';
+                    //Mittwoch
+                echo '</td>';
+                echo '<td>';
+                    //Donnerstag
+                echo '</td>';
+                echo '<td>';
+                    //Freitag
+                echo '</td>';
+                echo '<td>';
+                    //Samstag
+                echo '</td>';
+                echo '<td>';
+                    //Sonntag
+                echo '</td>';
+                ?>
             </tr>
         </table> 
     </div>

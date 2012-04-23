@@ -4,7 +4,8 @@ if (isset($_SESSION['user'])) {
     $_SESSION['user'] = null;
     $_SESSION['al'] = null;
     header("refresh:0;url=login.php");
-} else { require_once "dbcfg.php";
+} else {
+    require_once "dbcfg.php";
     $user = $_POST['user'];
     $password = md5($_POST['password']);
 
@@ -16,9 +17,11 @@ if (isset($_SESSION['user'])) {
 
     $query = "SELECT * FROM user WHERE username = '" . $user . "' AND password = '" . $password . "'";
     $result = mysql_query($query);
-    $access_level = mysql_result($result, 0, "access_level");
-
-    if ($access_level != "") {
+    if (!$result) {
+        die("Query to show fields from table failed");
+    }
+    if(mysql_fetch_array($result)) {
+        $access_level = $row['access_level'];
         $_SESSION['user'] = $user;
         $_SESSION['al'] = $access_level;
         //SPÄTER AUSBESSERN
@@ -26,19 +29,19 @@ if (isset($_SESSION['user'])) {
         header("refresh:0;url=index.php");
     } else {
         ?>
-		<html>
-			<head>
-				<meta HTTP-EQUIV="REFRESH" content="5; url=login.php" />
-			</head>
-			<body style="font-family:sans-serif">
-				<center>
-			
-					<h3>Username und/oder Passwort falsch!</h3>
-					<p>Sie werden in 5 Sekunden weitergeleitet ...</p>
-					<p>Klicken Sie <a href="login.php">hier</a> wenn Sie nicht warten wollen.</p>
-				</center>
-			</body>
+        <html>
+            <head>
+                <meta HTTP-EQUIV="REFRESH" content="5; url=login.php" />
+            </head>
+            <body style="font-family:sans-serif">
+            <center>
+
+                <h3>Username und/oder Passwort falsch!</h3>
+                <p>Sie werden in 5 Sekunden weitergeleitet ...</p>
+                <p>Klicken Sie <a href="login.php">hier</a> wenn Sie nicht warten wollen.</p>
+            </center>
+        </body>
         </html>
-    <?php
+        <?php
     }
 }?>

@@ -5,12 +5,12 @@ if (!isset($_SESSION['user']) || $_SESSION['user'] == "") {
 } else {
     $user = $_SESSION['user'];
     $al = $_SESSION['al'];
-    
-    if ($_SESSION['al'] < 2 && isset($_GET['newsubuser']))
-        $_SESSION['subuser'] = $_GET['newsubuser'];
+
+    if ($_SESSION['al'] < 2 && isset($_POST['user']))
+        $_SESSION['subuser'] = $_POST['user'];
 
     require_once("dbcfg.php");
-    $pages = array("kalender", "suche", "stats", "neu", "mitarbeiter", "mneu", "mdel", "medit");
+    $pages = array("kalender", "suche", "stats", "neu", "mitarbeiter", "mneu", "mdel", "medit", "kunden");
     if (isset($_GET['page'])) {
         $page = $_GET['page'];
     } else {
@@ -45,16 +45,25 @@ if (!isset($_SESSION['user']) || $_SESSION['user'] == "") {
                     <div id="header"><h2>Terminverwaltung</h2></div>
                     <div id="topnav">
                         <div id="leftnav">
-                            <a href="index.php" <?php if ($page == "kalender")
-        echo 'id="current"'; ?>><img src="css/calendar.png" />Kalender</a>
-                            <a href="index.php?page=suche" <?php if ($page == "suche")
-                               echo 'id="current"'; ?>><img src="css/list.png" />Suche</a>
+                            <a href="index.php" <?php
+    if ($page == "kalender")
+        echo 'id="current"';
+    ?>><img src="css/calendar.png" />Kalender</a>
+                            <a href="index.php?page=suche" <?php
+                           if ($page == "suche")
+                               echo 'id="current"';
+    ?>><img src="css/list.png" />Suche</a>
                                <?php
                                if ($_SESSION['al'] == 0 || $_SESSION['al'] == 2)
                                    echo '<a href="#"><img src="css/chart_bar.png" />Statistiken</a>';
                                if ($_SESSION['al'] < 2)
                                    echo '<a href="#"><img src="css/date_add.png" />Termin erstellen</a>';
-                               echo '<a href="index.php?page=mitarbeiter"><img src="css/group.png" />Mitarbeiter</a>';
+                               if ($_SESSION['al'] == 0) {
+                                   echo '<a href="index.php?page=mitarbeiter"';
+                                   if ($page == "mitarbeiter")
+                                       echo ' id="current"';
+                                   echo '><img src="css/group.png" />Mitarbeiter</a>';
+                               }
                                ?>
                         </div>
                         <div id="rightnav">
@@ -69,7 +78,8 @@ if (!isset($_SESSION['user']) || $_SESSION['user'] == "") {
                         <?php
                         echo "Angemeldet als: <span class='hl'>" . $_SESSION['user'] . "</span>";
                         if ($_SESSION['al'] < 2) {
-                            echo " | Modus: <span class='hl'>" . $_SESSION['subuser'] . "</span> | Anderer Modus: <select name='user' onchange=\"window.location='index.php?newsubuser='+this.options[this.selectedIndex].value;\">\n";
+                            echo " | Modus: <form style='display:inline' name='newsubuser' method='POST'><select name='user' onchange='document.newsubuser.submit();'>";
+                            echo "<script>newsubuser.setAttribute('action', location.href);</script>";
                             $result = mysql_query("SELECT username FROM user ORDER BY username");
                             if (!$result) {
                                 die("Query to show fields from table failed");
@@ -77,13 +87,13 @@ if (!isset($_SESSION['user']) || $_SESSION['user'] == "") {
                             while ($row = mysql_fetch_array($result)) {
                                 $tmp = $row['username'];
                                 $option = "<option value='" . $tmp . "'";
-                                if($tmp==$_SESSION['subuser']) 
+                                if ($tmp == $_SESSION['subuser'])
                                     $option.="selected='selected'";
-                                $option .= ">".$tmp;
+                                $option .= ">" . $tmp;
                                 $option .= "</option>";
                                 echo $option;
                             }
-                            echo "</select>";
+                            echo "</select></form>";
                         }
                         ?>
                     </div>
