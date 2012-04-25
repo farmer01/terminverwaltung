@@ -1,5 +1,6 @@
 <?php
 if (isset($_POST['kunde'])) {
+    $_SESSION['testing'] = 'asdf';
 //Injection Protection
     $kundenID = mysql_real_escape_string(stripslashes($_POST['kunde']));
     $terminart = mysql_real_escape_string(stripslashes($_POST['terminart']));

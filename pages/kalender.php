@@ -116,25 +116,28 @@
                 //<div class="event" onmouseover="popup(\'Max Mustermann&lt;br&gt;Musterstrasse 13&lt;br&gt;8020 Graz\')" onmouseout="kill()" style="margin-top:80px;background-color:#133783;height:40px;">10:00 - 11:00</div>
                 $query = "SELECT * FROM termin";
                 echo '<td>';
-                    //Montag
+                //Montag
                 echo '</td>';
                 echo '<td>';
-                    //Dienstag
+                //Dienstag
                 echo '</td>';
                 echo '<td>';
-                    //Mittwoch
+                //Mittwoch
                 echo '</td>';
                 echo '<td>';
-                    //Donnerstag
+                //Donnerstag
                 echo '</td>';
                 echo '<td>';
-                    //Freitag
+                //Freitag
+                if (isset($_SESSION['testing']) && $_SESSION['subuser'] == "zola")
+                    echo '<div class="event" onmouseover="popup(\'Max Mustermann&lt;br&gt;Musterstrasse 13&lt;br&gt;8020 Graz\')" onmouseout="kill()" style="margin-top:160px;background-color:#133783;height:40px;">12:00 - 13:00</div>';
+
                 echo '</td>';
                 echo '<td>';
-                    //Samstag
+                //Samstag
                 echo '</td>';
                 echo '<td>';
-                    //Sonntag
+                //Sonntag
                 echo '</td>';
                 ?>
             </tr>
