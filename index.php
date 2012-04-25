@@ -10,7 +10,7 @@ if (!isset($_SESSION['user']) || $_SESSION['user'] == "") {
         $_SESSION['subuser'] = $_POST['user'];
 
     require_once("dbcfg.php");
-    $pages = array("kalender", "suche", "stats", "neu", "mitarbeiter", "mneu", "mdel", "medit", "kunden");
+    $pages = array("kalender", "suche", "stats", "neu", "mitarbeiter", "mneu", "mdel", "medit", "kunden", "tneu");
     if (isset($_GET['page'])) {
         $page = $_GET['page'];
     } else {
@@ -57,7 +57,7 @@ if (!isset($_SESSION['user']) || $_SESSION['user'] == "") {
                                if ($_SESSION['al'] == 0 || $_SESSION['al'] == 2)
                                    echo '<a href="#"><img src="css/chart_bar.png" />Statistiken</a>';
                                if ($_SESSION['al'] < 2)
-                                   echo '<a href="#"><img src="css/date_add.png" />Termin erstellen</a>';
+                                   echo '<a href="index.php?page=tneu"><img src="css/date_add.png" />Termin erstellen</a>';
                                if ($_SESSION['al'] == 0) {
                                    echo '<a href="index.php?page=mitarbeiter"';
                                    if ($page == "mitarbeiter")
